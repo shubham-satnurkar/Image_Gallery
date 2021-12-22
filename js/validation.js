@@ -238,3 +238,15 @@ function feedValidateForm(){
 
     return st6 && st7 && st8  ;
 }
+
+
+
+
+
+
+
+
+
+
+// Star Rating Program
+

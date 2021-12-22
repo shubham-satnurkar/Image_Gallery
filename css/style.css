@@ -68,13 +68,14 @@ p{font-size: 1rem;color: #000;line-height:22px;text-align: justify;font-family: 
 .img-block .category{width: 100%;display: block;text-align: center;}
 .img-block .category .cat-items{
 	display: flex;flex-wrap: wrap;background-color: lightgray;justify-content: space-around;
-	padding: 14px 0;margin: 0 auto 30px ;align-items: center;box-shadow: 1px 5px 5px rgba(0, 0, 0, .4);
+	margin: 0 auto 30px ;align-items: center;box-shadow: 1px 5px 5px rgba(0, 0, 0, .4);
 }
-.img-block .category .cat-items .list-item{flex: 0 0 30px;}
-.img-block .category .cat-items .list-item a{
-	color: #000;text-decoration: none;font-size: 1.125rem;font-family: roboto-medium;transition: .5s;
+.img-block .category .cat-items .list-item{
+	color: #006FA6;text-decoration: none;font-size: 1.125rem;font-family: roboto-medium;
+	cursor: pointer;padding: 15px 30px;
 }
-.img-block .category .cat-items .list-item a:hover{	color: #006FA6;}
+.img-block .category .cat-items .list-item.active{background-color: #006FA6;color: #fff;}
+.img-block .category .cat-items .list-item:hover{color: #fff;}
 .img-block .main-block{
 	display: flex;flex-wrap: wrap;flex-direction: row;justify-content: space-between;
 }
@@ -200,9 +201,9 @@ p{font-size: 1rem;color: #000;line-height:22px;text-align: justify;font-family: 
 .feedback-form .form .form-group .input-group{padding: 8px 15px;margin-top: 5px;border-radius: 0;border:1px solid #006FA6;}
 .feedback-form .form .form-group .input-group:focus{box-shadow: 0px 0px 5px #6278df;outline: none;}
 .feedback-form .form .form-group.message .input-group{height: 100px;resize: vertical;}
-.feedback-form .form .form-group .star{display: flex;justify-content: center;margin-bottom: 10px;}
-.feedback-form .form .form-group .star .fas{font-size: 1.25rem;margin: 0 10px;color: #006FA6;}
-.feedback-form .form .form-group .star .fas:hover{color: #FFD43B;}
+.feedback-form .form .form-group .star-rating{display: flex;justify-content: center;margin-bottom: 10px;}
+.feedback-form .form .form-group .star-rating .fas{font-size: 1.25rem;margin: 0 10px;color: #006FA6;}
+.feedback-form .form .form-group .star-rating .fas:hover{color: #FFD43B;}
 .feedback-form .form-heading .form .form-group.btn button{width: 30%;display: block;margin: auto;padding: 12px 0;
 	background-color: #00354F;color: #fff;border: none;box-shadow: 0px 0px 5px rgba(0, 0, 0, .4) ;
 }
