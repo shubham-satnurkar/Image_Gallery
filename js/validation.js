@@ -6,7 +6,7 @@ let messageNode = $('#message');
 
 let feedNameNode = $('#feedName');
 let feedEmailNode = $('#feedEmail');
-let feedMessageNode = $('feedMessage');
+let feedMessageNode = $('#feedMessage');
 
 let errorNode1 = $('#error1');
 let errorNode2 = $('#error2');
@@ -34,8 +34,8 @@ $(document).ready(function(){
 	feedEmailNode.blur(()=> validate7());
 	feedMessageNode.blur(()=> validate8());
 
-	contFormNode.submit(()=>validateForm());
-	feedFormNode.submit(()=>validateForm());
+	contFormNode.submit(()=>contValidateForm());
+	feedFormNode.submit(()=>feedValidateForm());
 });
 
 
@@ -201,19 +201,14 @@ function validate7(){
 
 
 function validate8(){
-	errorNode8.text(" ");
+	errorNode8.text("");
 	let feedMessage = feedMessageNode.val();
-	let regExp = new RegExp("^[A-Za-z]*$");
-	console.log(regExp.test(feedMessage));
+	// console.log(regExp.test(feedMessage));
 	if (feedMessage == '') {
 		errorNode8.text("this field required");
 		feedMessageNode.css('border', border1);
 		return false;
-	}
-	else if(regExp.test(feedMessage)==false){
-		errorNode8.text("Message required");
-		feedMessageNode.css('border', border1);
-		return false;
+
 	}
 	else{
 		feedMessageNode.css('border', border2);
@@ -225,16 +220,21 @@ function validate8(){
 
 // Submit From Validation
 
-function validateForm(){
+function contValidateForm(){
     let st1=validate1(); 
     let st2=validate2();
     let st3=validate3();
     let st4=validate4();
     let st5=validate5();
+
+    return st1 && st2 && st3 && st4 && st5 ;
+}
+
+function feedValidateForm(){
     
     let st6=validate6();
     let st7=validate7();
     let st8=validate8();
 
-    return st1 && st2 && st3 && st4 && st5 && st6 && st7 && st8;
+    return st6 && st7 && st8  ;
 }
