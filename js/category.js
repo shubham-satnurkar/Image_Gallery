@@ -21,21 +21,40 @@ $(document).ready(function(){
 	// Menu Button Onlick Collapse menu
 	$('#menuBtn').click(function(event){
         $('#navbar').toggle(500).css({
-			'display': 'flex',
+			'display': 'block',
 			'width': '50%'
 		});
-        console.log("Clicked")
+        
     });
 
-	$(window).resize(function(){
-		if($(this)>767){
-			$("#navbar").show()
-			
+	$(window).on('resize', function(){
+		if($(this).width()>767){
+			$("#navbar").show();
+		}
+		else{
+			$("#navbar").hide();
 		}
 	})
 
+	let $read = $("#read")
+	let $txt = $("#txt");
+	$read.on('click', function(){
+		$txt.toggle(500, ()=>{
 
-
+			if($txt.css('display')== 'none'){
+				$read.text("Read More...")
+				return false
+			}
+			else if($txt.css('display')== 'block'){
+				$read.text("Less...")
+				return false
+			}
+			else{
+				$read.text("Read More...")
+				return true
+			}
+		});
+	})
 
 
 });
